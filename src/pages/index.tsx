@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import { Button, Checkbox, Form, Input } from 'antd';
 
-const inter = Inter({ subsets: ['latin'] })
+// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
@@ -22,9 +22,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <main className={`${styles.main} ${inter.className}`}>
-        
-      </main> */}
+   
      <nav className="navbar navbar-light bg-white mt-5 pt-5">
       <div className="container">
         <a className="navbar-brand" href="#">

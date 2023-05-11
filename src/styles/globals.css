@@ -152,3 +152,7 @@ input:focus {
   cursor: pointer;
 }
 
+section.ant-layout{
+  height: 100vh;
+}
+
