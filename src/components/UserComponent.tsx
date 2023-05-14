@@ -144,7 +144,6 @@ const UserComponent = (props: any) => {
             setSiderbar(!collapsed);
           }}
           onBreakpoint={(broken) => {
-            console.log(broken);
             onBreakPoint(broken)
           }}
           >

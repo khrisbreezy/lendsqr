@@ -9,20 +9,21 @@ import moment from 'moment';
 import Head from 'next/head';
 
 
-const userGroupCard = [
-  {title: 'Users', imgSrc: '/images/icons/users-group.svg', count: '2,453', id: 1},
-  {title: 'Active Users', imgSrc: '/images/icons/active-users.svg', count: '2,453', id: 2},
-  {title: 'Users with loans', imgSrc: '/images/icons/users-loan.svg', count: '12,453', id: 3},
-  {title: 'Users with savings', imgSrc: '/images/icons/users-savings.svg', count: '102,453', id: 4}
-]
 
 const User = () => {
-
+  
   const [ showFilter, setShowFilter ] = React.useState(false);
   const [showMoredetails, setShowMoreDetails] = React.useState('');
   const {usersState, setUsersState}=useUserContext() || [];
   const [current, setCurrent] = React.useState(1)
   const [postsPerPage] = React.useState(10)
+
+  const userGroupCard = [
+    {title: 'Users', imgSrc: '/images/icons/users-group.svg', count: usersState.length || 0, id: 1},
+    {title: 'Active Users', imgSrc: '/images/icons/active-users.svg', count: usersState.length || 0, id: 2},
+    {title: 'Users with loans', imgSrc: '/images/icons/users-loan.svg', count: '12,453', id: 3},
+    {title: 'Users with savings', imgSrc: '/images/icons/users-savings.svg', count: '102,453', id: 4}
+  ]
 
   const toggleMoreDetails = (val:string)=>{
     
