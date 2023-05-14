@@ -4,18 +4,18 @@ import { useEffect } from "react";
 
 export class ValidateUser {
   static clearToken = async () => {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
+    sessionStorage.removeItem('user');
+    sessionStorage.removeItem('token');
   };
   static validateUser = async () => {
-    if (localStorage.getItem('token') === null) {
-      localStorage.clear();
+    if (sessionStorage.getItem('token') === null) {
+      sessionStorage.clear();
       router.push("/");
     }
     return;
   };
   static validateUserLogin = async () => {
-    if (!!localStorage.getItem('token')) {     
+    if (!!sessionStorage.getItem('token')) {     
       router.push("/users");
     }
     return;
