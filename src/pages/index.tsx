@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head'
 import styles from '@/styles/Home.module.scss'
 import { Form, Input } from 'antd';
@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { lsSet } from '../../helpers/functions';
 import Router from 'next/router';
 import { notification } from "antd";
+import { ValidateUser } from '../../helpers/valiadte';
 
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
 
   const {usersState, setUsersState}=useUserContext();
 
-  console.log({usersState});
+  useEffect(() => {ValidateUser.validateUserLogin()},[]);
 
   const generateUserToken = () => {
     const userToken = uuidv4();
@@ -27,7 +28,6 @@ export default function Home() {
   };
   
   const onFinish=(val:any)=>{
-    console.log({val});
 
     try {
       const user = usersState.filter((user:any)=> user.email === val.email);
@@ -49,15 +49,6 @@ export default function Home() {
     }
   }
 
-//   React.useEffect(() => {
-//     fetch(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users`)
-//   .then(response => response.json())
-//   .then(async data => {
-//       setUsersState(data)
-//   })
-//   .catch(error => console.log(error));
-// }, [])
-
 
   return (
     <>
@@ -75,12 +66,12 @@ export default function Home() {
         </a>
       </div>
     </nav>
-      <section className="container mt-5">
+      <section className="container mt-5 mb-5">
         <div className="row">
           <div className="col-md-6">
             <img src="/images/banner.svg" alt="" className='img-fluid mt-5'/>
           </div>
-          <div className="col-md-5 offset-1">
+          <div className="col-md-5 offset-md-1">
             <h1>Welcome!</h1>
             <p className={`${styles.description} mb-5`}>Enter details to login.</p>
 

@@ -3,12 +3,19 @@
     width: 500px;
 }
 
-aside.ant-layout-sider{
-    flex: 0 0 280px !important;
-    max-width: 280px !important;
-    min-width: 280px !important;
-    width: 280px !important;
-}
+// aside.ant-layout-sider{
+//     flex: 0 0 280px !important;
+//     max-width: 280px !important;
+//     min-width: 280px !important;
+//     width: 280px !important;
+
+//     @media only screen and  (max-width: 992px) {
+//         flex: 0 0 0 !important;
+//         max-width: 0 !important;
+//         min-width: 0 !important;
+//         width: 0 !important;
+//     }
+// }
 
 .search-input {
     border-top-left-radius: 10px !important;
@@ -146,6 +153,10 @@ table tbody tr td span.status{
 
 .more-options {
     flex: 1;
+
+    @media only screen and  (max-width: 992px) {
+        flex: unset;
+    }
 }
 
 .more-options p {
@@ -159,6 +170,10 @@ select.select-options {
     border: none;
     padding: 10px;
     border-radius: 5px;
+
+    @media only screen and  (max-width: 1200px) {
+        width: 65px;
+    }
 }
 
 li.ant-pagination-item {
@@ -281,3 +296,17 @@ button.activate-user {
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(33, 63, 125, .2);
 }
+
+.table-responsive {
+    table {
+        @media only screen and  (max-width: 992px) {       
+            width: 1000px;
+        }
+    }
+}
+
+// .ant-layout-sider-children {
+//     @media only screen and  (max-width: 992px) {
+//         display: none;
+//     }
+// }

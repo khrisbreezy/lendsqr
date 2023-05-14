@@ -46,13 +46,12 @@ const User = () => {
   return (
     <UserComponent>
       <>
-      
       <h2 className='color-primary mb-5'>Users</h2>
         <div className="row">
           {userGroupCard.map((card:any)=>{
             return (
-              <div key={card.id} className="col-md-3">
-                <div className="card p-4 user-card">
+              <div key={card.id} className="col-lg-3 mb-lg-0 mb-3 text-lg-start text-center">
+                <div className="card p-4 user-card align-items-lg-start align-items-center">
                   <img src={card.imgSrc} className='img-fluid w-40px ' alt="" />
                   <p className='user-card-text mt-3'>{card.title}</p>
                   <h3 className='user-card-number color-primary mb-0'>{card.count}</h3>
@@ -62,8 +61,8 @@ const User = () => {
           })}
         </div>
 
-        <div className="user-table card user-card mt-5 p-4">
-          <table className="table p-relative ">
+        <div className="user-table card user-card mt-5 p-4 table-responsive">
+          <table className="table p-relative">
             <thead>
               <tr>
                 <th onClick={()=> setShowFilter(!showFilter)} className='cursor-pointer' scope="col">Organization <img src="/images/icons/filter.svg" className='img-fluid' /></th>
@@ -98,7 +97,7 @@ const User = () => {
               })}
             </tbody>
 
-            <div className={`card filter-card ${showFilter ? 'd-block' : 'd-none'}`}>
+            <span className={`card filter-card ${showFilter ? 'd-block' : 'd-none'}`}>
               <p className='mb-0'>Organizaion</p>
               <select className='mb-3'>
                 <option value="">Select</option>
@@ -125,12 +124,12 @@ const User = () => {
                 <button className='reset filter-class '>Reset</button>
                 <button className='filter filter-class '>Filter</button>
               </div>
-            </div>
+            </span>
 
           </table>
         </div>
 
-        <div className="pagination mt-3 d-flex align-items-center justify-content-between">
+        <div className="pagination flex-wrap mt-3 d-flex align-items-center justify-content-between">
           <div className="more-options">
             <p className='mb-0 color-primary '>Showing <select onChange={(e)=>paginate(e.target.value)} className='select-options'>
               <option value={postsPerPage}>{postsPerPage}</option>

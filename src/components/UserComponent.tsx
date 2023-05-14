@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -70,6 +70,9 @@ const UserComponent = (props: any) => {
     ValidateUser.clearToken();
     router.push('/');
   }
+
+  const [ sidebar, setSiderbar ] = useState(true);
+  const [ breakpoint, onBreakPoint ] = useState(false);
   
 
   const router = useRouter();
@@ -94,7 +97,7 @@ const UserComponent = (props: any) => {
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div
-                className="collapse navbar-collapse"
+                className="collapse navbar-collapse flex-wrap"
                 id="navbarSupportedContent"
               >
 
@@ -138,9 +141,13 @@ const UserComponent = (props: any) => {
       </Header>
       <Layout>
         <Sider breakpoint="lg" collapsedWidth="0" 
-          width={280} style={{ background: colorBgContainer }}
+          width={sidebar ? 280 : 0} style={{ background: colorBgContainer }}
           onCollapse={(collapsed, type) => {
-            console.log(collapsed, type);
+            setSiderbar(!collapsed);
+          }}
+          onBreakpoint={(broken) => {
+            console.log(broken);
+            onBreakPoint(broken)
           }}
           >
           <div className="sidebar-container">
@@ -177,7 +184,7 @@ const UserComponent = (props: any) => {
               <p className='mb-0 px-2 color-primary'>Logout</p>
           </a>
         </Sider>
-        <Layout style={{ padding: "60px 30px 60px 60px" }}>
+        <Layout style={{ padding: breakpoint ? "20px" : "60px 30px 60px 60px", display: sidebar && breakpoint ? 'none' : 'block' }}>
             <div  style={{
               paddingLeft: 24,
               paddingRight: 24

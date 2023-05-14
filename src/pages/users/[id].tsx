@@ -10,22 +10,22 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
     return (
         <UserComponent>
             <p><Link className='link-color' href={'/users'}><img className='img-fluid pe-2' src="/images/icons/back.svg" alt="" /> Back to Users</Link></p>
-            <div className="d-flex align-items-center justify-content-between mt-4">
+            <div className="d-flex flex-wrap align-items-center justify-content-between mt-4">
                 <h2 className='color-primary'>User Details</h2>
 
-                <div className="d-flex">
-                    <button className="user-action blacklist-user">
+                <div className="d-flex flex-wrap">
+                    <button className="user-action blacklist-user mb-sm-0 mb-3">
                         Blacklist User
                     </button>
-                    <button className="user-action activate-user">
+                    <button className="user-action activate-user mb-sm-0 mb-3">
                         Activate User
                     </button>
                 </div>
             </div>
             <div className="card user-card mt-5 p-4 pb-0">
                 <div className="row">
-                    <div className="col-md-3">
-                        <div className="d-flex align-items-center">
+                    <div className="col-xl-3 ">
+                        <div className="d-flex align-items-center flex-wrap justify-content-sm-start justify-content-center">
                             <img src={userResponse.profile.avatar} className='img-fluid me-2 rounded-circle' alt="" />
                             <div className="name">
                                 <h4 className='color-primary'><b>{userResponse.profile.firstName} {userResponse.profile.lastName}</b></h4>
@@ -33,7 +33,7 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-2 border-left-right d-flex align-items-center justify-content-center flex-column">
+                    <div className="col-xl-2 border-left-right d-flex align-items-center justify-content-center flex-column">
                         <p className='mb-0 color-sec fonts18'>{`User's Tier`}</p>
                         <div className="d-flex">
                             <img src="/images/icons/star.svg" className='img-fluid me-2' alt="" />
@@ -41,7 +41,7 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
                             <img src="/images/icons/star2.svg" className='img-fluid me-2' alt="" />
                         </div>
                     </div>
-                    <div className="col-md-5 ps-5 d-flex  justify-content-center flex-column">
+                    <div className="col-xl-5 ps-5 d-flex  justify-content-center flex-column text-xl-start text-center">
                         <h4 className='color-primary'><b>₦{userResponse.accountBalance}</b></h4>
                         <p className='mb-0 color-sec'>{userResponse.accountNumber}</p>
                     </div>

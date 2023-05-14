@@ -14,4 +14,10 @@ export class ValidateUser {
     }
     return;
   };
+  static validateUserLogin = async () => {
+    if (!!localStorage.getItem('token')) {     
+      router.push("/users");
+    }
+    return;
+  };
 }
