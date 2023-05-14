@@ -101,7 +101,7 @@ const UserComponent = (props: any) => {
                 id="navbarSupportedContent"
               >
 
-                <div className='ms-5 ps-5'>
+                <div className='ms-md-5 ms-0 ps-md-5 ps-0'>
                   <div className="search-container d-flex">
                     <input
                     className="form-control search-input"

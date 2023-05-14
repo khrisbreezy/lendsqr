@@ -11,4 +11,10 @@ module.exports = {
   },
 };
 
+module.exports = {
+  styles: [
+    'bootstrap/dist/css/bootstrap.min.css'
+  ]
+};
+
 module.exports = nextConfig

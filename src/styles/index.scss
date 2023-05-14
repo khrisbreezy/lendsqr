@@ -1,6 +1,10 @@
 .search-container {
     height: 45px;
     width: 500px;
+
+    @media only screen and  (max-width: 992px) {
+        width: 100%;
+    }
 }
 
 // aside.ant-layout-sider{
@@ -52,6 +56,18 @@ button.search-btn {
 a.nav-link {
     color: #213F7D !important;
     font-size: 16px;
+}
+
+li.nav-item {
+    @media only screen and  (max-width: 992px) {
+        text-align: center;
+    }
+}
+
+.account-dropdown {
+    @media only screen and  (max-width: 992px) {
+        justify-content: center;
+    }
 }
 
 .opacity-5 {
@@ -288,6 +304,10 @@ button.activate-user {
             background-color: #39CDCC;
             position: absolute;
             left: 0;
+
+            @media only screen and  (max-width: 768px) {
+                display: none;
+            }
         }
     }
 }

@@ -62,35 +62,35 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
                     <p className='mb-0 color-primary fonts18'>Personal Information</p>
                     <div className="user-info">
                         <div className="row">
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Full name</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.profile.firstName} {userResponse.profile.lastName}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Phone Number</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.profile.phoneNumber}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Email Address</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.email}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>BVN</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.profile.bvn}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Gender</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.profile.gender}</p>
                             </div>
-                            <div className="col-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Marital Status</h6>
                                 <p className='mb-0 color-sec fonts16'>No Data</p>
                             </div>
-                            <div className="col-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Children</h6>
                                 <p className='mb-0 color-sec fonts16'>No Data</p>
                             </div>
-                            <div className="col-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Type of Residence</h6>
                                 <p className='mb-0 color-sec fonts16'>No data</p>
                             </div>
@@ -101,31 +101,31 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
                     <p className='mb-0 color-primary fonts18'>Education and Employment</p>
                     <div className="user-info">
                         <div className="row">
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Level of Education</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.education.level}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Employment Status</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.education.employmentStatus}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Sector of Employment</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.education.sector}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Duration of Employment</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.education.duration}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Office Email</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.education.officeEmail}</p>
                             </div>
-                            <div className="col-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Monthly Income</h6>
                                 <p className='mb-0 color-sec fonts16'>₦{userResponse.education.monthlyIncome[0]} - ₦{userResponse.education.monthlyIncome[1]}</p>
                             </div>
-                            <div className="col-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Loan Repayment</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.education.loanRepayment}</p>
                             </div>
@@ -136,15 +136,15 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
                     <p className='mb-0 color-primary fonts18'>Socials</p>
                     <div className="user-info">
                         <div className="row">
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Twitter</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.socials.twitter}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Facebook</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.socials.facebook}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Instagram</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.socials.instagram}</p>
                             </div>
@@ -156,19 +156,19 @@ const SingleUser = ({userResponse: userResponse}:any)=>{
                     <p className='mb-0 color-primary fonts18'>Guarantor</p>
                     <div className="user-info">
                         <div className="row">
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Full name</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.guarantor.firstName} {userResponse.guarantor.lastName}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Phone Number</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.guarantor.phoneNumber}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Address</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.guarantor.address}</p>
                             </div>
-                            <div className="col-md-2 mt-3">
+                            <div className="col-lg-2 mt-3">
                                 <h6 className='color-sec text-uppercase fonts12'>Gender</h6>
                                 <p className='mb-0 color-sec fonts16'>{userResponse.guarantor.gender}</p>
                             </div>
