@@ -1,11 +1,14 @@
-import '@/styles/globals.css'
+import '@/styles/globals.scss'
+import '@/styles/index.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import type { AppProps } from 'next/app'
+import { UserProvider } from '@/context/UserContext';
 
 export default function App({ Component, pageProps }: AppProps) {
  
-
   return <>
-    <Component {...pageProps} />
+    <UserProvider>
+        <Component {...pageProps} />
+    </UserProvider>
     </>
 }

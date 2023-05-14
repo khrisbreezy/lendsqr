@@ -1,17 +1,62 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { Button, Checkbox, Form, Input } from 'antd';
+import styles from '@/styles/Home.module.scss'
+import { Form, Input } from 'antd';
+import { useUserContext } from '../context/UserContext';
+import { v4 as uuidv4 } from 'uuid';
+import { lsSet } from '../../helpers/functions';
+import Router from 'next/router';
+import { notification } from "antd";
 
-// const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
 
-  const [showPassword, setshowPassword] = React.useState(false)
+  const [showPassword, setshowPassword] = React.useState(false);
+  const [loading, setLoading] = React.useState(false);
 
-  const onFinish=()=>{}
+  const {usersState, setUsersState}=useUserContext();
+
+  console.log({usersState});
+
+  const generateUserToken = () => {
+    const userToken = uuidv4();
+    // You can store or use the userToken as needed
+    console.log('Generated user token:', userToken);
+    return userToken;
+  };
+  
+  const onFinish=(val:any)=>{
+    console.log({val});
+
+    try {
+      const user = usersState.filter((user:any)=> user.email === val.email);
+      console.log({user});
+      const u = user[0];
+      
+      if(user.length > 0) {
+        lsSet('token',  generateUserToken());
+        lsSet('user', u);
+        Router.push('/users');
+      } else {
+        notification.error({
+          message: 'Email not found',
+          description: 'Please enter with your correct email address',
+        })
+      }
+    } catch(e) {
+      console.log(e);
+    }
+  }
+
+//   React.useEffect(() => {
+//     fetch(`https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users`)
+//   .then(response => response.json())
+//   .then(async data => {
+//       setUsersState(data)
+//   })
+//   .catch(error => console.log(error));
+// }, [])
 
 
   return (
@@ -70,7 +115,7 @@ export default function Home() {
                 </a>
               </Form.Item>
 
-              <button className="login w-100 p-3">Log in</button>
+              <button disabled={loading} className="login w-100 p-3">{loading ? 'Logging in...' : 'Log in'}</button>
             </Form>
           </div>
         </div>
