@@ -23,15 +23,14 @@ export default function Home() {
   const generateUserToken = () => {
     const userToken = uuidv4();
     // You can store or use the userToken as needed
-    console.log('Generated user token:', userToken);
     return userToken;
   };
   
   const onFinish=(val:any)=>{
-
+    // Please note that in order to login, the email entered is checeked if it's among the list of user from the mock API.
+    // If it exists, you can login with the an existing email and password of your choice. Thank you.
     try {
       const user = usersState.filter((user:any)=> user.email === val.email);
-      console.log({user});
       const u = user[0];
       
       if(user.length > 0) {

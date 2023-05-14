@@ -1,7 +1,7 @@
 
 import router from "next/router";
-import { useEffect } from "react";
 
+// Validate User Aithentication
 export class ValidateUser {
   static clearToken = async () => {
     sessionStorage.removeItem('user');

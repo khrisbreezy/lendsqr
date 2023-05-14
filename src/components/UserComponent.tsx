@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React, { useEffect, useState } from 'react';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Layout, theme } from 'antd';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { lsGet } from '../../helpers/functions';
 import { ValidateUser } from '../../helpers/valiadte';
 
 const { Header, Content, Sider } = Layout;
-
 
 const menuList = [
   {
@@ -74,7 +73,6 @@ const UserComponent = (props: any) => {
   const [ sidebar, setSiderbar ] = useState(true);
   const [ breakpoint, onBreakPoint ] = useState(false);
   
-
   const router = useRouter();
 
   return (
@@ -178,7 +176,7 @@ const UserComponent = (props: any) => {
             })}
 
           </div>
-            
+        
           <a onClick={handleLogout} href='' className="d-flex align-items-center px-4 mb-5">
               <img src="/images/icons/sign-out.svg" alt="" className="img-fluid" />
               <p className='mb-0 px-2 color-primary'>Logout</p>

@@ -2,7 +2,7 @@ import React, {createContext, useContext, useEffect, useState} from 'react'
 import {  Props, UserInterface } from '../../utils/types'
 
 
-const UserContext= createContext<any>(null)
+const UserContext= createContext<any|null>(null)
 
 export const useUserContext=()=>useContext(UserContext)
 
@@ -10,6 +10,7 @@ export function UserProvider({children}:Props){
     const [usersState, setUsersState]=useState({
         users: []
     })
+
     const value:UserInterface={
         usersState,
         setUsersState

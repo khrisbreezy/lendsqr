@@ -9,7 +9,7 @@ export function lsGet(str) {
 
 export function lsSet(str, obj) {
     if (typeof window !== 'undefined') {
-    //Setting a move -> sending the events 
+    //Set storage
     sessionStorage.setItem(str, JSON.stringify(obj));
     }
 }
